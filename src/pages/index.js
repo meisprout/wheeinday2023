@@ -14,9 +14,6 @@ export default function Home() {
       gsap.from(".herotext", { 
         y: 360 
       });
-      gsap.to(".boxx", { 
-        x: 260 
-      });
       
     }, app);
     

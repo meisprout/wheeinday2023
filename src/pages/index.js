@@ -2,10 +2,47 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import styles from '@component/styles/Home.module.css'
+<<<<<<< Updated upstream
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
+=======
+import { gsap, easeOut } from 'gsap'
+import { useLayoutEffect, useRef } from 'react'
+
+export default function Home() {
+
+  const app = useRef();
+  
+  useLayoutEffect(() => {
+    let ctx = gsap.context(() => {
+      gsap.to("#herotext .line", { 
+        y: "0%" ,
+        duration:1,
+        stagger:0.2,
+        ease: easeOut
+       ,
+      });
+
+      gsap.to("#about img", { 
+        x:"0%",
+        duration:1.5,
+        stagger:0.5,
+        ease: easeOut,
+        scrollTrigger: {
+          trigger: "#aboutimgset",
+          scrub: 1
+        }
+       ,
+      });
+      
+    }, app);
+    
+    return () => ctx.revert();
+  }, []);
+
+>>>>>>> Stashed changes
   return (
     <>
       <Head>
@@ -14,6 +51,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+<<<<<<< Updated upstream
       <main className={styles.main}>
         <div className={styles.description}>
           <p>
@@ -36,9 +74,27 @@ export default function Home() {
                 priority
               />
             </a>
+=======
+      <main ref={app} className={styles.main}>
+        <section className={styles.hero}>
+          <h1 id="herotext" className={styles.herotext}>
+            <div>
+              <span class="line">On April 17, 1995, in Jeonju,</span>
+            </div>
+            <div>
+            <span class="line">Jeollabuk-do, South Korea,</span>
+            </div>
+            <div>
+              <span class="line">a <i>butterfly </i>is born.</span>
+            </div>
+          </h1>
+          <div className={styles.herogallery}>
+            
+>>>>>>> Stashed changes
           </div>
         </div>
 
+<<<<<<< Updated upstream
         <div className={styles.center}>
           <Image
             className={styles.logo}
@@ -56,6 +112,29 @@ export default function Home() {
               height={31}
               priority
             />
+=======
+        <section id="about" className={styles.about}>
+          <h2>She is a butterfly who flies swiftly as the wind.</h2>
+          
+          <div id="aboutimgset" className={styles.aboutimgset}>
+            <div id="easy" className={styles.imgcontainer} style={{rotate:"-5deg"}}>
+              <Image src="/images/solopics/easy.png" layout="fill"/>
+            </div>
+            <div className={styles.imgcontainer} style={{rotate:"5deg", position:"relative", top:"50px"}}>
+              <Image src="/images/solopics/goodbye.png" layout="fill" />
+            </div>
+            <div className={styles.imgcontainer} style={{rotate:"-5deg"}}>
+              <Image src="/images/solopics/watercolor.png" layout="fill"/>
+            </div>
+            <div className={styles.imgcontainer} style={{rotate:"5deg", position:"relative", top:"50px"}}>
+              <Image src="/images/solopics/makemehappy.png" layout="fill"/>
+            </div>
+          </div>
+          
+          <div className={styles.aboutdesc}>
+            <h3>JUNG WHEEIN &#40;정휘인&#41;</h3>
+            <p>is a South Korean singer under The L1ve. She is best known as a member of South Korean girl group MAMAMOO, where she is focused on vocals and performance.</p>
+>>>>>>> Stashed changes
           </div>
         </div>
 

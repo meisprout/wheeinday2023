@@ -85,6 +85,7 @@ body {
   overflow-x: hidden;
 }
 
+<<<<<<< Updated upstream
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
@@ -93,6 +94,15 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+=======
+::selection{
+    background-color: #AAB9E1;
+    color:#F0F2F6;
+}
+
+h1,h2,h3{
+    font-family: "Instrument Serif", serif;
+>>>>>>> Stashed changes
 }
 
 a {

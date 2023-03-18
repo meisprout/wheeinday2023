@@ -250,6 +250,7 @@
   }
 }
 
+<<<<<<< Updated upstream
 /* Tablet and Smaller Desktop */
 @media (min-width: 701px) and (max-width: 1120px) {
   .grid {
@@ -276,3 +277,49 @@
     transform: rotate(0deg);
   }
 }
+=======
+.herotext div{
+    overflow: hidden;
+}
+
+.herotext span{
+    display: inline-block;
+    transform:translateY(100%)
+}
+
+.about{
+    text-align: center;
+    margin:5rem;
+}
+
+.aboutimgset{
+    display: grid;
+    grid-template-columns: repeat(4,25rem);
+    justify-content: center;
+    margin:10rem 0;
+}
+
+.aboutimgset .imgcontainer{
+    position: relative;
+    height:60vh;
+    
+    overflow: hidden;
+}
+
+.aboutimgset .imgcontainer img{
+    width:100%;
+    height:100%;
+    object-fit: cover;
+    
+    display: inline-block;
+    transform:translateX(100%)
+}
+
+.aboutimgset #easy{
+    rotate: 10deg;
+}
+
+.aboutdesc{
+    padding:0 15rem;
+}
+>>>>>>> Stashed changes

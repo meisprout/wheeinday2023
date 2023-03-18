@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import styles from '@component/styles/Home.module.css'
-import { gsap, easeOut } from 'gsap'
+import { gsap } from 'gsap'
 import { useLayoutEffect, useRef } from 'react'
 
 export default function Home() {
@@ -15,19 +15,14 @@ export default function Home() {
         y: "0%" ,
         duration:1,
         stagger:0.2,
-        ease: easeOut
-       ,
+        ease:"easeOut"
       });
 
       gsap.from("#aboutimgset div", { 
         rotate:"0deg",
         duration:1,
         stagger:0.2,
-        ease: easeOut,
-        scrollTrigger: {
-          trigger: "#aboutimgset",
-        }
-       ,
+        ease:"easeOut"
       });
       
     }, app);

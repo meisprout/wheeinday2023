@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import styles from '@component/styles/Home.module.css'
-import { gsap } from 'gsap'
+import gsap from 'gsap'
 import { useLayoutEffect, useRef } from 'react'
 
 export default function Home() {

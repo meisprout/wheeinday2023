@@ -1,0 +1,45 @@
+.container{
+    display: flex;
+    align-items: center;
+    gap:5rem;
+}
+
+.imgcontainer{
+    position: relative;
+    width: 30vw;
+    height:30vw;
+}
+
+.imgcontainer img{
+    width:100%;
+    height:100%;
+    object-fit: cover;
+}
+
+.txtcontainer button{
+  border: 3px solid #292B31;
+  background-color: #F0F2F6;
+  color:#292B31;
+  transition: all 0.3s;
+}
+
+.txtcontainer button:hover{
+    border-color: #F0F2F6;
+    background-color: #292B31;
+    color: #F0F2F6;
+}
+
+.tracks{
+    margin-top: 4rem;
+}
+
+.tracks li{
+    display: flex;
+    justify-content: space-between;
+}
+
+.buttoncontainer{
+    display: flex;
+    gap:2rem;
+    margin-top: 4rem;
+}

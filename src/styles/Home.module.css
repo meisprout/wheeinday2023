@@ -22,18 +22,9 @@
   background: radial-gradient(50% 50% at 50% 50%, #AAB9E1 0%, #F0F2F6 100%)
 }
 
-.herotext div{
-    overflow: hidden;
-}
-
-.herotext span{
-    display: inline-block;
-    transform:translateY(100%)
-}
-
 .about{
     text-align: center;
-    margin:5rem;
+    margin:10rem 5rem;
 }
 
 .aboutimgset{
@@ -58,6 +49,21 @@
 
 .aboutdesc{
     padding:0 15rem;
+}
+
+.discography {
+    padding: 5rem;
+}
+
+.solowork{
+    padding: 10rem 0;
+}
+
+.sololist{
+    display: flex;
+    flex-direction: column;
+    margin-top: 5rem;
+    gap:15rem;
 }
 
 @media only screen and (max-width:600px) {

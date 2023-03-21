@@ -16,8 +16,6 @@ html{
 }
 
 body {
-  background-color: #F0F2F6;
-  color: #292B31;
   overflow-x: hidden;
 }
 
@@ -41,7 +39,33 @@ h3{
   font-size: 6rem;
 }
 
-p{
+p, button, a, li{
   font-size: 2rem;
   font-family: "Archivo", sans-serif;
+}
+
+p{
+  line-height: 1.5;
+  margin-top: 2rem;
+}
+
+button{
+  padding:2rem 4rem;
+  border-radius: 4rem;
+  cursor: pointer;
+}
+
+h1 div, h2 div,h3 div{
+  overflow: hidden;
+}
+
+h1 span, h2 span, h3 span{
+  display: inline-block;
+  transform:translateY(100%);
+  opacity: 0;
+}
+
+#main{
+  background-color: #F0F2F6;
+  color:#292B31;
 }

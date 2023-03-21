@@ -5,6 +5,7 @@ import styles from '@component/styles/Home.module.css'
 import gsap from 'gsap'
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import { useLayoutEffect, useRef } from 'react'
+import SoloWork from '@component/components/solowork'
 
 export default function Home() {
   gsap.registerPlugin(ScrollTrigger);
@@ -12,21 +13,54 @@ export default function Home() {
   
   useLayoutEffect(() => {
     let ctx = gsap.context(() => {
-      gsap.to("#herotext .line", { 
+      gsap.to("#hero h1 .line", { 
         y: "0%" ,
+        opacity:"1",
         duration:1,
         stagger:0.2,
         ease:"easeOut"
       });
 
+      gsap.to("#about h2 .line", { 
+        y: "0%" ,
+        opacity:"1",
+        duration:1,
+        stagger:0.2,
+        ease:"easeOut",
+        scrollTrigger:{
+          trigger:"#about h2",
+        }
+      });
+
+      gsap.to("#about h3 .line", { 
+        y: "0%" ,
+        opacity:"1",
+        duration:1,
+        stagger:0.2,
+        ease:"easeOut",
+        scrollTrigger:{
+          trigger:"#about h3",
+        }
+      });
+
+      gsap.from("#about p", { 
+        opacity:0,
+        duration:1,
+        ease:"SlowMo.easeInOut",
+        scrollTrigger:{
+          trigger:"#about p",
+        }
+      });
+
       gsap.from("#easy", { 
         rotate:"0deg",
         x:375,
-        duration:2,
-        ease:"Power3.easeInOut",
-        delay:0.3,
+        ease:"SlowMo.easeInOut",
         scrollTrigger:{
-          trigger:"#aboutimgset"
+          trigger:"#aboutimgset",
+          start: "center bottom",
+          end: "bottom center",
+          scrub: true
         }
       });
 
@@ -34,22 +68,24 @@ export default function Home() {
         top:"0px",
         rotate:"0deg",
         x:125,
-        duration:2,
-        ease:"Power3.easeInOut",
-        delay:0.2,
+        ease:"SlowMo.easeInOut",
         scrollTrigger:{
-          trigger:"#aboutimgset"
+          trigger:"#aboutimgset",
+          start: "center bottom",
+          end: "bottom center",
+          scrub: true
         }
       });
 
       gsap.from("#watercolor", {
         rotate:"0deg", 
         x:-125,
-        duration:2,
-        ease:"Power3.easeInOut",
-        delay:0.2,
+        ease:"SlowMo.easeInOut",
         scrollTrigger:{
-          trigger:"#aboutimgset"
+          trigger:"#aboutimgset",
+          start: "center bottom",
+          end: "bottom center",
+          scrub: true
         }
       });
 
@@ -57,14 +93,61 @@ export default function Home() {
         top:"0px",
         rotate:"0deg",
         x:-375,
-        duration:2,
-        ease:"Power3.easeInOut",
-        delay:0.3,
+        ease:"SlowMo.easeInOut",
         scrollTrigger:{
-          trigger:"#aboutimgset"
+          trigger:"#aboutimgset",
+          start: "center bottom",
+          end: "bottom center",
+          scrub: true
+        }
+      });
+
+      gsap.to("#discography-desc h2 .line", { 
+        y: "0%" ,
+        opacity:"1",
+        duration:1,
+        delay:0.2,
+        stagger:0.2,
+        ease:"easeOut",
+        scrollTrigger:{
+          trigger:"#discography-desc h2",
+        }
+      });
+
+      gsap.to("#solowork h2 .line", { 
+        y: "0%" ,
+        opacity:"1",
+        duration:1,
+        delay:0.2,
+        stagger:0.2,
+        ease:"easeOut",
+        scrollTrigger:{
+          trigger:"#solowork h2",
+        }
+      });
+
+      gsap.from("#discography-desc p", { 
+        opacity:0,
+        duration:1,
+        
+        delay:0.2,
+        ease:"SlowMo.easeInOut",
+        scrollTrigger:{
+          trigger:"#discography-desc p",
         }
       });
       
+      gsap.to("#discography", { 
+        backgroundColor:"#292B31",
+        color:"#F0F2F6",
+        scrollTrigger:{
+          trigger:"#discography-desc h2",
+          start: "top",
+          end: "bottom",
+          scrub: true
+        }
+      });
+
     }, app);
     
     return () => ctx.revert();
@@ -78,11 +161,11 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       
-      <main ref={app} className={styles.main}>
-      <div className={styles.responsivenotif}>
-        <span>Mobile version in progress! Please use a tablet &#40;landscape&#41; or desktop for best experience!</span>
-      </div>
-        <section className={styles.hero}>
+      <main id="main" ref={app} className={styles.main}>
+        <div className={styles.responsivenotif}>
+          <span>Mobile version in progress! Please use a tablet &#40;landscape&#41; or desktop for best experience!</span>
+        </div>
+        <article id="hero" className={styles.hero}>
           <h1 id="herotext" className={styles.herotext}>
             <div>
               <span class="line">On April 17, 1995, in Jeonju,</span>
@@ -96,12 +179,16 @@ export default function Home() {
           </h1>
           <div className={styles.herogallery}>
           </div>
-        </section>
+        </article>
 
-        <section id="about" className={styles.about}>
-          <h2>She is a butterfly who flies swiftly as the wind.</h2>
+        <article id="about" className={styles.about}>
+          <h2>
+            <div>
+                <span class="line">She is a butterfly who flies swiftly as the wind.</span>
+            </div>
+          </h2>
           
-          <div id="aboutimgset" className={styles.aboutimgset}>
+          <section id="aboutimgset" className={styles.aboutimgset}>
             <div id="easy" className={styles.imgcontainer} style={{rotate:"-5deg"}}>
               <Image src="/images/solopics/easy.png" layout="fill"/>
             </div>
@@ -114,13 +201,150 @@ export default function Home() {
             <div id="makemehappy" className={styles.imgcontainer} style={{rotate:"5deg", position:"relative", top:"50px"}}>
               <Image src="/images/solopics/makemehappy.png" layout="fill"/>
             </div>
-          </div>
-          
-          <div className={styles.aboutdesc}>
-            <h3>JUNG WHEEIN &#40;정휘인&#41;</h3>
-            <p>is a South Korean singer under The L1ve. She is best known as a member of South Korean girl group MAMAMOO, where she is focused on vocals and performance.</p>
-          </div>
           </section>
+          
+          <section className={styles.aboutdesc}>
+            <h3>
+              <div>
+                  <span class="line">JUNG WHEEIN &#40;정휘인&#41;</span>
+              </div>
+            </h3>
+            <p>is a South Korean singer under The L1ve. She is best known as a member of South Korean girl group MAMAMOO, where she is focused on vocals and performance.</p>
+          </section>
+          </article>
+
+          <article id="discography" className={styles.discography}>
+            <section id="discography-desc" >
+              <h2>
+                <div>
+                    <span class="line">Wheein is well-known and appreciated by her </span>
+                </div>
+                <div>
+                    <span class="line">honey vocals. From calm, relaxing love songs, to </span>
+                </div>
+                <div>
+                    <span class="line">touching, powerful ballads.</span>
+                </div>
+              </h2>
+
+              <p>She is also considered the backbone of MAMAMOO, as she provides support during their vocal performances. As a background vocal doing adlibs or the center of attention, Wheein is able to bring a unique flavor into every song.</p>
+            </section>
+            
+            
+            
+            <section id="solowork" className={styles.solowork}>
+            <h2>
+              <div>
+                <span class="line">SOLO WORK</span>
+              </div>
+            </h2>
+            <div id="sololist" className={styles.sololist}>
+              <SoloWork props={
+                {
+                  title:"Magnolia",
+                  image:'/images/soloalbums/magnolia.webp',
+                  date:"April 17, 2018",
+                  tracks:[
+                    {
+                        "title":"Easy (feat. Sik-K)",
+                        "time":"3:08"
+                    }
+                  ],
+                  titletrack:"Easy",
+                  spotify:"https://open.spotify.com/track/35Bon0pO4syTi6Hfsr2Kk8?si=d1fd6f4d4694442d",
+                  youtube:"https://youtu.be/U_tQ-GIC0O8",
+                }
+              }/>
+              <SoloWork props={
+                {
+                  title:"Soar",
+                  image:'/images/soloalbums/soar.webp',
+                  date:"April 17, 2018",
+                  tracks:[
+                    {
+                        "title":"Goodbye",
+                        "time":"4:12"
+                    }
+                    ],
+                  titletrack:"Goodbye",
+                  spotify:"https://open.spotify.com/track/35Bon0pO4syTi6Hfsr2Kk8?si=d1fd6f4d4694442d",
+                  youtube:"https://youtu.be/U_tQ-GIC0O8",
+                }
+              }/>
+              <SoloWork props={
+                {
+                  title:"Redd",
+                  image:'/images/soloalbums/redd.webp',
+                  date:"April 17, 2018",
+                  tracks:[
+                    {
+                        "title":"water color",
+                        "time":"3:09"
+                    },
+                    {
+                        "title":"TRASH (Feat. pH-1)",
+                        "time":"2:52"
+                    },
+                    {
+                        "title":"OHOO",
+                        "time":"3:16"
+                    },{
+                        "title":"Butterfly (Feat. GSoul)",
+                        "time":"3:28"
+                    },
+                    {
+                        "title":"Springtime",
+                        "time":"2:40"
+                    },
+                    {
+                        "title":"NO THANKS",
+                        "time":"3:52"
+                    }
+                    ],
+                  titletrack:"Watercolor",
+                  spotify:"https://open.spotify.com/track/35Bon0pO4syTi6Hfsr2Kk8?si=d1fd6f4d4694442d",
+                  youtube:"https://youtu.be/U_tQ-GIC0O8",
+                }
+              }/>
+              <SoloWork props={
+                {
+                  title:"WHEE",
+                  image:'/images/soloalbums/whee.webp',
+                  date:"April 17, 2018",
+                  tracks:[
+                    {
+                        "title":"Make Me Happy",
+                        "time":"3:17"
+                    },
+                    {
+                        "title":"Pink Cloud",
+                        "time":"3:01"
+                    },
+                    {
+                        "title":"Letter Filled With Light",
+                        "time":"3:08"
+                    },{
+                        "title":"Deserve (Interlude)",
+                        "time":"0:32"
+                    },
+                    {
+                        "title":"Pastel",
+                        "time":"2:22"
+                    },
+                    {
+                        "title":"Paraglide",
+                        "time":"3:38"
+                    }
+                    ],
+                  titletrack:"Make Me Happy",
+                  spotify:"https://open.spotify.com/track/35Bon0pO4syTi6Hfsr2Kk8?si=d1fd6f4d4694442d",
+                  youtube:"https://youtu.be/U_tQ-GIC0O8",
+                }
+              }/>
+            </div>
+            </section>
+            
+          </article>
       </main>
     </>
   )

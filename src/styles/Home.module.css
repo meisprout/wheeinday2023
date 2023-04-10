@@ -66,6 +66,34 @@
     gap:15rem;
 }
 
+.vocals{
+    overflow: hidden;
+}
+
+.vocalyoutube{
+    height:80vh;
+    width:50vw;
+    margin-top: 4rem;
+    float: left;
+    clear: left;
+}
+
+.vocalyoutube:nth-of-type(2n){
+    float: right;
+    clear: both;
+}
+
+.dance{
+    margin-top: 8rem;
+    text-align: right;
+    overflow: hidden;
+}
+
+.dance p{
+    float: right;
+    width: 60rem;
+}
+
 @media only screen and (max-width:600px) {
     .responsivenotif{
         display: block;

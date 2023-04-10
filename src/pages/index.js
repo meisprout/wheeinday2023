@@ -148,6 +148,52 @@ export default function Home() {
         }
       });
 
+      gsap.to("#vocals h2 .line", { 
+        y: "0%" ,
+        opacity:"1",
+        duration:1,
+        delay:0.2,
+        stagger:0.2,
+        ease:"easeOut",
+        scrollTrigger:{
+          trigger:"#vocals h2",
+        }
+      });
+
+      gsap.from("#vocals p", { 
+        opacity:0,
+        duration:1,
+        
+        delay:0.2,
+        ease:"SlowMo.easeInOut",
+        scrollTrigger:{
+          trigger:"#vocals p",
+        }
+      });
+
+      gsap.to("#dance h2 .line", { 
+        y: "0%" ,
+        opacity:"1",
+        duration:1,
+        delay:0.2,
+        stagger:0.2,
+        ease:"easeOut",
+        scrollTrigger:{
+          trigger:"#dance h2",
+        }
+      });
+
+      gsap.from("#dance p", { 
+        opacity:0,
+        duration:1,
+        
+        delay:0.2,
+        ease:"SlowMo.easeInOut",
+        scrollTrigger:{
+          trigger:"#dance p",
+        }
+      });
+
     }, app);
     
     return () => ctx.revert();
@@ -211,7 +257,7 @@ export default function Home() {
             </h3>
             <p>is a South Korean singer under The L1ve. She is best known as a member of South Korean girl group MAMAMOO, where she is focused on vocals and performance.</p>
           </section>
-          </article>
+        </article>
 
           <article id="discography" className={styles.discography}>
             <section id="discography-desc" >
@@ -343,7 +389,49 @@ export default function Home() {
               }/>
             </div>
             </section>
-            
+
+            <section id="vocals" className={styles.vocals}>
+              <h2>
+                <div>
+                  <span class="line">Vocal Showcase</span>
+                </div>
+              </h2>
+              <p>Listen with headphones/earphones for best experience!</p>
+              
+                <div className={styles.vocalyoutube}>
+                  <iframe width="100%" height="100%" src="https://www.youtube.com/embed/ydsuc1vOavw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+                <div className={styles.vocalyoutube}>
+                  <iframe width="100%" height="100%" src="https://www.youtube.com/embed/6l4divMKp4E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+                <div className={styles.vocalyoutube}>
+                  <iframe width="100%" height="100%" src="https://www.youtube.com/embed/2wcAbpYfj5c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+                <div className={styles.vocalyoutube}>
+                  <iframe width="100%" height="100%" src="https://www.youtube.com/embed/AzPgpPe1RHA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+                <div className={styles.vocalyoutube}>
+                  <iframe width="100%" height="100%" src="https://www.youtube.com/embed/VzpxvsrupkY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+                <div className={styles.vocalyoutube}>
+                  <iframe width="100%" height="100%" src="https://www.youtube.com/embed/bOnMQ9OmfAk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+              
+            </section>
+
+            <section id="dance" className={styles.dance}>
+              <h2>
+                <div>
+                    <span class="line">Aside from vocals, Wheein is also </span>
+                </div>
+                <div>
+                    <span class="line">great in dancing and performing!</span>
+                </div>
+              </h2>
+              <p>
+              As part of the performance line, Wheein is shown to be very skillful in dancing. She is able to do cool moves for hip-hop songs, to alluring moves for mature concepts.
+              </p>
+            </section>
           </article>
       </main>
     </>

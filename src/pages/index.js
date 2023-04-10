@@ -6,6 +6,7 @@ import gsap from 'gsap'
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import { useLayoutEffect, useRef } from 'react'
 import SoloWork from '@component/components/solowork'
+import Link from 'next/link'
 
 export default function Home() {
   gsap.registerPlugin(ScrollTrigger);
@@ -432,7 +433,12 @@ export default function Home() {
               As part of the performance line, Wheein is shown to be very skillful in dancing. She is able to do cool moves for hip-hop songs, to alluring moves for mature concepts.
               </p>
             </section>
+            <section className={styles.end}>
+              <h2>YOU&#39;VE REACHED THE END OF THE SITE!</h2>
+              <h2>The site is still work in progress. To further improve the site until completion, you may share feedback or suggestions to <Link href="https://twitter.com/loafsprout">@loafsprout!</Link></h2>
+            </section>
           </article>
+          
       </main>
     </>
   )

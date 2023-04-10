@@ -94,6 +94,17 @@
     width: 60rem;
 }
 
+.end{
+    text-align: center;
+    margin-top: 8rem;
+}
+
+.end a{
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+}
+
 @media only screen and (max-width:600px) {
     .responsivenotif{
         display: block;

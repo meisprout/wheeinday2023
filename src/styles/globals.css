@@ -16,7 +16,7 @@ html{
 }
 
 body {
-  overflow-x: hidden;
+  overflow-x: hidden;height: 500vh;
 }
 
 ::selection{
@@ -68,4 +68,8 @@ h1 span, h2 span, h3 span{
 #main{
   background-color: #F0F2F6;
   color:#292B31;
+}
+
+img, iframe{
+  border-radius: 1rem;
 }

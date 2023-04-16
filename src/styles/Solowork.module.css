@@ -1,7 +1,20 @@
 .container{
     display: flex;
     align-items: center;
+    justify-content: center;
     gap:5rem;
+    background-color: #F0F2F6;
+    color:#292B31;
+    padding:4rem 1rem;
+    height:90vh;
+    border-radius: 2rem;
+    margin:10rem 5rem;
+}
+
+.txtinfo{
+    display: flex;
+    align-items: center;
+    gap:10rem;
 }
 
 .imgcontainer{
@@ -16,26 +29,54 @@
     object-fit: cover;
 }
 
+.txtcontainer{
+    width:50rem;
+}
+
 .txtcontainer button{
-  border: 3px solid #292B31;
-  background-color: #F0F2F6;
-  color:#292B31;
+  border: 3px solid #F0F2F6;
+  background-color: #292B31;
+  color:#F0F2F6;
   transition: all 0.3s;
 }
 
 .txtcontainer button:hover{
-    border-color: #F0F2F6;
-    background-color: #292B31;
-    color: #F0F2F6;
+    border-color: #292B31;
+    background-color: #F0F2F6;
+    color: #292B31;
 }
 
 .tracks{
-    margin-top: 4rem;
+    height:20rem;
+    border: 3px solid #292B31;
+    overflow-y:auto;
+    border-radius: 1rem;
 }
+
+.tracks::-webkit-scrollbar{
+    width:0.75rem;
+    background-color: transparent;
+    border-left: 3px solid #292B31;
+}
+
+.tracks::-webkit-scrollbar-thumb{
+    background-color: #292B31;
+}
+
 
 .tracks li{
     display: flex;
     justify-content: space-between;
+    padding: 1rem;
+    border-bottom: 3px solid #292B31;
+}
+
+.tracks li:hover{
+    background-color: #bdc5df;
+}
+
+.tracks li:last-of-type{
+    border-bottom: 0;
 }
 
 .buttoncontainer{

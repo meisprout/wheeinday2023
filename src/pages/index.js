@@ -14,43 +14,33 @@ export default function Home() {
   
   useLayoutEffect(() => {
     let ctx = gsap.context(() => {
-      gsap.to("#hero h1 .line", { 
-        y: "0%" ,
-        opacity:"1",
-        duration:1,
-        stagger:0.2,
-        ease:"easeOut"
+      const headingItems = gsap.utils.toArray(".heading .line");
+
+      headingItems.forEach((item, i)=>{
+        gsap.to(item, {
+          y: "0%" ,
+          opacity:"1",
+          duration:1.25,
+          delay:(i*2)/50,
+          ease:"SlowMo.easeInOut",
+          scrollTrigger:{
+            trigger: item,
+        }
+        });
       });
 
-      gsap.to("#about h2 .line", { 
-        y: "0%" ,
-        opacity:"1",
-        duration:1,
-        stagger:0.2,
-        ease:"easeOut",
-        scrollTrigger:{
-          trigger:"#about h2",
-        }
-      });
+      const paragraphItems = gsap.utils.toArray(".description");
 
-      gsap.to("#about h3 .line", { 
-        y: "0%" ,
-        opacity:"1",
-        duration:1,
-        stagger:0.2,
-        ease:"easeOut",
-        scrollTrigger:{
-          trigger:"#about h3",
-        }
-      });
-
-      gsap.from("#about p", { 
-        opacity:0,
-        duration:1,
-        ease:"SlowMo.easeInOut",
-        scrollTrigger:{
-          trigger:"#about p",
-        }
+      paragraphItems.forEach((item, i)=>{
+        gsap.from(item, {
+          opacity:0,
+          duration:1.25,
+          delay:i/200,
+          ease:"SlowMo.easeInOut",
+          scrollTrigger:{
+            trigger:item,
+          }
+        });
       });
 
       gsap.from("#easy", { 
@@ -61,7 +51,7 @@ export default function Home() {
           trigger:"#aboutimgset",
           start: "center bottom",
           end: "bottom center",
-          scrub: true
+          scrub: 1
         }
       });
 
@@ -74,7 +64,7 @@ export default function Home() {
           trigger:"#aboutimgset",
           start: "center bottom",
           end: "bottom center",
-          scrub: true
+          scrub: 1
         }
       });
 
@@ -86,7 +76,7 @@ export default function Home() {
           trigger:"#aboutimgset",
           start: "center bottom",
           end: "bottom center",
-          scrub: true
+          scrub: 1
         }
       });
 
@@ -99,42 +89,7 @@ export default function Home() {
           trigger:"#aboutimgset",
           start: "center bottom",
           end: "bottom center",
-          scrub: true
-        }
-      });
-
-      gsap.to("#discography-desc h2 .line", { 
-        y: "0%" ,
-        opacity:"1",
-        duration:1,
-        delay:0.2,
-        stagger:0.2,
-        ease:"easeOut",
-        scrollTrigger:{
-          trigger:"#discography-desc h2",
-        }
-      });
-
-      gsap.to("#solowork h2 .line", { 
-        y: "0%" ,
-        opacity:"1",
-        duration:1,
-        delay:0.2,
-        stagger:0.2,
-        ease:"easeOut",
-        scrollTrigger:{
-          trigger:"#solowork h2",
-        }
-      });
-
-      gsap.from("#discography-desc p", { 
-        opacity:0,
-        duration:1,
-        
-        delay:0.2,
-        ease:"SlowMo.easeInOut",
-        scrollTrigger:{
-          trigger:"#discography-desc p",
+          scrub: 1
         }
       });
       
@@ -149,50 +104,42 @@ export default function Home() {
         }
       });
 
-      gsap.to("#vocals h2 .line", { 
-        y: "0%" ,
-        opacity:"1",
-        duration:1,
-        delay:0.2,
-        stagger:0.2,
-        ease:"easeOut",
-        scrollTrigger:{
-          trigger:"#vocals h2",
-        }
-      });
+      const vocalItems = gsap.utils.toArray(".vocalitem");
 
-      gsap.from("#vocals p", { 
-        opacity:0,
-        duration:1,
-        
-        delay:0.2,
-        ease:"SlowMo.easeInOut",
-        scrollTrigger:{
-          trigger:"#vocals p",
-        }
+      vocalItems.forEach((item, i)=>{
+        gsap.set(item,{
+          yPercent:-10,
+        });
+        gsap.from(item, {
+          scrollTrigger: {
+            trigger: item,
+            scrub:0.75
+          },
+          opacity:0.5,
+          duration:0.5,
+          delay:i/20,
+          yPercent:5,
+          ease: "SlowMo.easeInOut"
+        });
       });
+      
+      const danceItems = gsap.utils.toArray(".danceitem");
 
-      gsap.to("#dance h2 .line", { 
-        y: "0%" ,
-        opacity:"1",
-        duration:1,
-        delay:0.2,
-        stagger:0.2,
-        ease:"easeOut",
-        scrollTrigger:{
-          trigger:"#dance h2",
-        }
-      });
-
-      gsap.from("#dance p", { 
-        opacity:0,
-        duration:1,
-        
-        delay:0.2,
-        ease:"SlowMo.easeInOut",
-        scrollTrigger:{
-          trigger:"#dance p",
-        }
+      danceItems.forEach((item, i)=>{
+        gsap.set(item,{
+          yPercent:-10,
+        });
+        gsap.from(item, {
+          scrollTrigger: {
+            trigger: item,
+            scrub:0.75
+          },
+          opacity:0.5,
+          duration:0.5,
+          delay:i/20,
+          yPercent:5,
+          ease: "SlowMo.easeInOut"
+        });
       });
 
     }, app);
@@ -213,7 +160,7 @@ export default function Home() {
           <span>Mobile version in progress! Please use a tablet &#40;landscape&#41; or desktop for best experience!</span>
         </div>
         <article id="hero" className={styles.hero}>
-          <h1 id="herotext" className={styles.herotext}>
+          <h1 id="herotext" class="heading" className={styles.herotext}>
             <div>
               <span class="line">On April 17, 1995, in Jeonju,</span>
             </div>
@@ -229,7 +176,7 @@ export default function Home() {
         </article>
 
         <article id="about" className={styles.about}>
-          <h2>
+          <h2 class="heading">
             <div>
                 <span class="line">She is a butterfly who flies swiftly as the wind.</span>
             </div>
@@ -251,18 +198,18 @@ export default function Home() {
           </section>
           
           <section className={styles.aboutdesc}>
-            <h3>
+            <h3 class="heading">
               <div>
                   <span class="line">JUNG WHEEIN &#40;정휘인&#41;</span>
               </div>
             </h3>
-            <p>is a South Korean singer under The L1ve. She is best known as a member of South Korean girl group MAMAMOO, where she is focused on vocals and performance.</p>
+            <p class="description">is a South Korean singer under The L1ve. She is best known as a member of South Korean girl group MAMAMOO, where she is focused on vocals and performance.</p>
           </section>
         </article>
 
           <article id="discography" className={styles.discography}>
             <section id="discography-desc" >
-              <h2>
+              <h2 class="heading">
                 <div>
                     <span class="line">Wheein is well-known and appreciated by her </span>
                 </div>
@@ -274,34 +221,38 @@ export default function Home() {
                 </div>
               </h2>
 
-              <p>She is also considered the backbone of MAMAMOO, as she provides support during their vocal performances. As a background vocal doing adlibs or the center of attention, Wheein is able to bring a unique flavor into every song.</p>
+              <p class="description">She is also considered the backbone of MAMAMOO, as she provides support during their vocal performances. As a background vocal doing adlibs or the center of attention, Wheein is able to bring a unique flavor into every song.</p>
             </section>
             
             
             
             <section id="solowork" className={styles.solowork}>
-            <h2>
+            <h2 class="heading">
               <div>
                 <span class="line">SOLO WORK</span>
               </div>
             </h2>
             <div id="sololist" className={styles.sololist}>
-              <SoloWork props={
-                {
-                  title:"Magnolia",
-                  image:'/images/soloalbums/magnolia.webp',
-                  date:"April 17, 2018",
-                  tracks:[
-                    {
-                        "title":"Easy (feat. Sik-K)",
-                        "time":"3:08"
-                    }
-                  ],
-                  titletrack:"Easy",
-                  spotify:"https://open.spotify.com/track/35Bon0pO4syTi6Hfsr2Kk8?si=d1fd6f4d4694442d",
-                  youtube:"https://youtu.be/U_tQ-GIC0O8",
-                }
-              }/>
+
+              <div class="soloitem" style={{top:"40px"}}>
+                <SoloWork  props={
+                  {
+                    title:"Magnolia",
+                    image:'/images/soloalbums/magnolia.webp',
+                    date:"April 17, 2018",
+                    tracks:[
+                      {
+                          "title":"Easy (feat. Sik-K)",
+                          "time":"3:08"
+                      }
+                    ],
+                    titletrack:"Easy",
+                    spotify:"https://open.spotify.com/track/35Bon0pO4syTi6Hfsr2Kk8?si=d1fd6f4d4694442d",
+                    youtube:"https://youtu.be/U_tQ-GIC0O8",
+                  }
+                }/>
+              </div>
+              <div class="soloitem" style={{top:"45px"}}>
               <SoloWork props={
                 {
                   title:"Soar",
@@ -318,6 +269,8 @@ export default function Home() {
                   youtube:"https://youtu.be/U_tQ-GIC0O8",
                 }
               }/>
+              </div>
+              <div class="soloitem" style={{top:"50px"}}>
               <SoloWork props={
                 {
                   title:"Redd",
@@ -353,6 +306,8 @@ export default function Home() {
                   youtube:"https://youtu.be/U_tQ-GIC0O8",
                 }
               }/>
+              </div>
+              <div class="soloitem" style={{top:"55px"}}>
               <SoloWork props={
                 {
                   title:"WHEE",
@@ -388,40 +343,44 @@ export default function Home() {
                   youtube:"https://youtu.be/U_tQ-GIC0O8",
                 }
               }/>
+              </div>
+              
+             
+              
             </div>
             </section>
 
             <section id="vocals" className={styles.vocals}>
-              <h2>
+              <h2 class="heading">
                 <div>
                   <span class="line">Vocal Showcase</span>
                 </div>
               </h2>
-              <p>Listen with headphones/earphones for best experience!</p>
+              <p class="description">Listen with headphones/earphones for best experience!</p>
               
                 <div className={styles.vocalyoutube}>
-                  <iframe width="100%" height="100%" src="https://www.youtube.com/embed/ydsuc1vOavw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                  <iframe class="vocalitem" width="100%" height="100%" src="https://www.youtube.com/embed/ydsuc1vOavw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                 </div>
                 <div className={styles.vocalyoutube}>
-                  <iframe width="100%" height="100%" src="https://www.youtube.com/embed/6l4divMKp4E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                  <iframe class="vocalitem" width="100%" height="100%" src="https://www.youtube.com/embed/6l4divMKp4E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                 </div>
                 <div className={styles.vocalyoutube}>
-                  <iframe width="100%" height="100%" src="https://www.youtube.com/embed/2wcAbpYfj5c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                  <iframe class="vocalitem" width="100%" height="100%" src="https://www.youtube.com/embed/2wcAbpYfj5c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                 </div>
                 <div className={styles.vocalyoutube}>
-                  <iframe width="100%" height="100%" src="https://www.youtube.com/embed/AzPgpPe1RHA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                  <iframe class="vocalitem" width="100%" height="100%" src="https://www.youtube.com/embed/AzPgpPe1RHA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                 </div>
-                <div className={styles.vocalyoutube}>
-                  <iframe width="100%" height="100%" src="https://www.youtube.com/embed/VzpxvsrupkY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <div  className={styles.vocalyoutube}>
+                  <iframe class="vocalitem" width="100%" height="100%" src="https://www.youtube.com/embed/VzpxvsrupkY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                 </div>
-                <div className={styles.vocalyoutube}>
-                  <iframe width="100%" height="100%" src="https://www.youtube.com/embed/bOnMQ9OmfAk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <div  className={styles.vocalyoutube}>
+                  <iframe class="vocalitem" width="100%" height="100%" src="https://www.youtube.com/embed/bOnMQ9OmfAk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                 </div>
               
             </section>
 
             <section id="dance" className={styles.dance}>
-              <h2>
+              <h2 class="heading">
                 <div>
                     <span class="line">Aside from vocals, Wheein is also </span>
                 </div>
@@ -429,9 +388,21 @@ export default function Home() {
                     <span class="line">great in dancing and performing!</span>
                 </div>
               </h2>
-              <p>
+              <p class="description">
               As part of the performance line, Wheein is shown to be very skillful in dancing. She is able to do cool moves for hip-hop songs, to alluring moves for mature concepts.
               </p>
+              <div class="container" className={styles.dancecontainer}>
+                  <div  className={styles.danceyoutube}>
+                    <iframe  class="danceitem" width="100%" height="100%" src="https://www.youtube.com/embed/cnnaBrj_Ses" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                  </div>
+                  <div className={styles.danceyoutube}>
+                    <iframe  class="danceitem" width="100%" height="100%" src="https://www.youtube.com/embed/cnnaBrj_Ses" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                  </div>
+                  <div className={styles.danceyoutube}>
+                    <iframe  class="danceitem" width="100%" height="100%" src="https://www.youtube.com/embed/cnnaBrj_Ses" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                  </div>
+              </div>
+              
             </section>
             <section className={styles.end}>
               <h2>YOU&#39;VE REACHED THE END OF THE SITE!</h2>

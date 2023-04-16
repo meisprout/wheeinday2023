@@ -16,7 +16,9 @@ html{
 }
 
 body {
-  overflow-x: hidden;height: 500vh;
+  overflow-x: hidden;
+  font-size: 2rem;
+  font-family: "Archivo", sans-serif;
 }
 
 ::selection{
@@ -37,11 +39,6 @@ h2{
 }
 h3{
   font-size: 6rem;
-}
-
-p, button, a, li{
-  font-size: 2rem;
-  font-family: "Archivo", sans-serif;
 }
 
 p{

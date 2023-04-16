@@ -81,29 +81,37 @@
     clear: both;
 }
 
+
 .dance{
     margin-top: 8rem;
     text-align: right;
-    padding:0;
 }
 
 .dance p{
     float: right;
     width: 60rem;
+    margin-bottom: 10rem;
 }
 
-.dancecontainer{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 20rem;
+.danceyoutube iframe{
+    height: 80vh;
+    width:90vw;
+    margin-bottom: 5rem;
 }
 
-.danceyoutube{
-margin-bottom: 2rem;
-    height:80vh;
-    width:85vw;
+.komca{
+    text-align: center;
 }
+
+.komcacontainer{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap:2rem;
+    padding:5rem;
+    margin-top: 0 5rem;
+}
+
+
 .end{
     text-align: center;
     margin-top: 8rem;

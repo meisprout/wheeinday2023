@@ -6,6 +6,7 @@ import gsap from 'gsap'
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import { useLayoutEffect, useRef } from 'react'
 import SoloWork from '@component/components/solowork'
+import Komca from '@component/components/komca'
 import Link from 'next/link'
 
 export default function Home() {
@@ -122,24 +123,32 @@ export default function Home() {
           ease: "SlowMo.easeInOut"
         });
       });
-      
       const danceItems = gsap.utils.toArray(".danceitem");
 
       danceItems.forEach((item, i)=>{
         gsap.set(item,{
-          yPercent:-10,
+          opacity:1,
         });
         gsap.from(item, {
           scrollTrigger: {
             trigger: item,
             scrub:0.75
           },
-          opacity:0.5,
+          
           duration:0.5,
           delay:i/20,
-          yPercent:5,
+          opacity:0,
           ease: "SlowMo.easeInOut"
         });
+      });
+
+      gsap.from("#komcacontainer div", { 
+        opacity:0,
+        yPercent:5,
+        stagger:0.25,
+        scrollTrigger:{
+          trigger:"#komcacontainer"
+        }
       });
 
     }, app);
@@ -223,8 +232,6 @@ export default function Home() {
 
               <p class="description">She is also considered the backbone of MAMAMOO, as she provides support during their vocal performances. As a background vocal doing adlibs or the center of attention, Wheein is able to bring a unique flavor into every song.</p>
             </section>
-            
-            
             
             <section id="solowork" className={styles.solowork}>
             <h2 class="heading">
@@ -388,19 +395,105 @@ export default function Home() {
                     <span class="line">great in dancing and performing!</span>
                 </div>
               </h2>
+
               <p class="description">
               As part of the performance line, Wheein is shown to be very skillful in dancing. She is able to do cool moves for hip-hop songs, to alluring moves for mature concepts.
               </p>
-              <div class="container" className={styles.dancecontainer}>
-                  <div  className={styles.danceyoutube}>
-                    <iframe  class="danceitem" width="100%" height="100%" src="https://www.youtube.com/embed/cnnaBrj_Ses" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                  </div>
-                  <div className={styles.danceyoutube}>
-                    <iframe  class="danceitem" width="100%" height="100%" src="https://www.youtube.com/embed/cnnaBrj_Ses" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                  </div>
-                  <div className={styles.danceyoutube}>
-                    <iframe  class="danceitem" width="100%" height="100%" src="https://www.youtube.com/embed/cnnaBrj_Ses" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                  </div>
+              
+              <div className={styles.dancecontainer}>
+              <div className={styles.danceyoutube}>
+                <iframe class="danceitem" width="100%" height="100%" src="https://www.youtube.com/embed/cnnaBrj_Ses" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+              </div>
+              <div className={styles.danceyoutube}>
+              <iframe class="danceitem" width="100%" height="100%" src="https://www.youtube.com/embed/hu7idVhlnq4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+              </div>
+              <div className={styles.danceyoutube}>
+              <iframe class="danceitem" width="100%" height="100%" src="https://www.youtube.com/embed/I7TMLCnNQqw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+              </div>
+              <div className={styles.danceyoutube}>
+              <iframe class="danceitem" width="100%" height="100%" src="https://www.youtube.com/embed/VevlSFx8jsE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+              </div>
+              <div className={styles.danceyoutube}>
+              <iframe class="danceitem"  width="100%" height="100%" src="https://www.youtube.com/embed/-RxAP9H5fas" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+              </div>
+              </div>
+              
+            </section>
+
+            <section id="komca" className={styles.komca}>
+              <h2 class="heading">
+                <div>
+                    <span class="line">9 KOMCA Credits</span>
+                </div>
+              </h2>
+
+              <p class="description">
+              MAMAMOO members are well-known for being self-made artists, and Wheein is no exception!              </p>
+              
+              <div id="komcacontainer" className={styles.komcacontainer}>
+              <Komca  props={
+                  {
+                    song:"My Hometown (고향이)",
+                    artist:"MAMAMOO",
+                    credit:"Writer"
+                  }
+                }/>
+                <Komca  props={
+                  {
+                    song:"Moderato",
+                    artist:"MAMAMOO",
+                    credit:"Writer and Composer"
+                  }
+                }/>
+                <Komca  props={
+                  {
+                    song:"Holy-Day",
+                    artist:"Jung Min Hyuk",
+                    credit:"Writer"
+                  }
+                }/>
+                <Komca  props={
+                  {
+                    song:"25",
+                    artist:"MAMAMOO",
+                    credit:"Writer"
+                  }
+                }/>
+                <Komca  props={
+                  {
+                    song:"Miss U",
+                    artist:"Jvde Milez",
+                    credit:"Writer"
+                  }
+                }/>
+                <Komca  props={
+                  {
+                    song:"Trash",
+                    artist:"Wheein",
+                    credit:"Composer"
+                  }
+                }/>
+                <Komca  props={
+                  {
+                    song:"Ohoo",
+                    artist:"Wheein",
+                    credit:"Writer"
+                  }
+                }/>
+                <Komca  props={
+                  {
+                    song:"Springtime",
+                    artist:"Wheein",
+                    credit:"Writer and Composer"
+                  }
+                }/>
+                <Komca  props={
+                  {
+                    song:"Letter Filled With Light",
+                    artist:"Wheein",
+                    credit:"Writer"
+                  }
+                }/>
               </div>
               
             </section>

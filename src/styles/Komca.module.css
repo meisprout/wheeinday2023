@@ -1,0 +1,12 @@
+.container{
+    text-align: left;
+    background-color: #F0F2F6;
+    color:#292B31;
+    padding:2rem;
+    border-radius: 2rem;
+}
+
+.container h3{
+    font-style: italic;
+    font-size: 3.5rem;
+}

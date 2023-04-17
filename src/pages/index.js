@@ -351,8 +351,8 @@ export default function Home() {
                     }
                     ],
                   titletrack:"Goodbye",
-                  spotify:"https://open.spotify.com/track/35Bon0pO4syTi6Hfsr2Kk8?si=d1fd6f4d4694442d",
-                  youtube:"https://youtu.be/U_tQ-GIC0O8",
+                  spotify:"https://open.spotify.com/album/7zhSn5lo1BsHmvumiZS3qu?si=nci70mBASSuASnb-4ofrBw",
+                  youtube:"https://www.youtube.com/U_dpIqCDcZk",
                 }
               }/>
               </div>
@@ -388,8 +388,8 @@ export default function Home() {
                     }
                     ],
                   titletrack:"Watercolor",
-                  spotify:"https://open.spotify.com/track/35Bon0pO4syTi6Hfsr2Kk8?si=d1fd6f4d4694442d",
-                  youtube:"https://youtu.be/U_tQ-GIC0O8",
+                  spotify:"https://open.spotify.com/album/32pXXle0zoKIFG03iefH2c?si=SzeGhbo0TQeEsLjKKf6hgQ",
+                  youtube:"https://youtu.be/ShFKF2YN7H0",
                 }
               }/>
               </div>
@@ -425,8 +425,8 @@ export default function Home() {
                     }
                     ],
                   titletrack:"Make Me Happy",
-                  spotify:"https://open.spotify.com/track/35Bon0pO4syTi6Hfsr2Kk8?si=d1fd6f4d4694442d",
-                  youtube:"https://youtu.be/U_tQ-GIC0O8",
+                  spotify:"https://open.spotify.com/album/4BLxIwHfv87WeOQ9A4sm9E?si=db0KkyjUQ7-vbii-f1KaYg",
+                  youtube:"https://youtu.be/8nVyoH0ppmI",
                 }
               }/>
               </div>

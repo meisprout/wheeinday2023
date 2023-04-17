@@ -124,6 +124,7 @@ export default function Home() {
           ease: "SlowMo.easeInOut"
         });
       });
+
       const danceItems = gsap.utils.toArray(".danceitem");
 
       danceItems.forEach((item, i)=>{
@@ -181,6 +182,53 @@ export default function Home() {
           backgroundColor:"#F0F2F6",
           color:"#292B31",
         });
+
+        gsap.set(".soar",{
+          yPercent:0
+        });
+        gsap.from(".soar", {
+          scrollTrigger: {
+            trigger: ".soar",
+            scrub:1
+          },
+          
+          duration:0.5,
+          yPercent:5,
+          ease: "SlowMo.easeInOut"
+        });
+
+        gsap.set(".easy",{
+          yPercent:5
+        });
+        gsap.from(".easy", {
+          scrollTrigger: {
+            trigger: ".easy",
+            scrub:1
+          },
+          
+          duration:0.5,
+          yPercent:0,
+          ease: "SlowMo.easeInOut"
+        });
+
+        const otherartItems = gsap.utils.toArray(".otherartitem");
+
+        otherartItems.forEach((item, i)=>{
+        gsap.set(item,{
+          yPercent:-10,
+        });
+        gsap.from(item, {
+          scrollTrigger: {
+            trigger: item,
+            scrub:1
+          },
+          duration:0.5,
+          delay:i/20,
+          yPercent:5,
+          ease: "SlowMo.easeInOut"
+        });
+      });
+        
 
     }, app);
     
@@ -611,21 +659,55 @@ export default function Home() {
             </h3>
 
             <div className={styles.artcontainer}>
-              <div className={styles.artredd}>
+            <div className={styles.artmain}>
+            <div className={styles.artredd}>
                 <Image src="/images/art/redd.png" alt="wheein redd" layout='fill'/>
               </div>
 
               <div className={styles.artdescription}>
-                <p>Incorporating paintings in her music releases</p>
+                <p class="description">Incorporating paintings in her music releases</p>
               </div>
 
               <div className={styles.easysoar}>
                 <div className={styles.imgcontainer}>
-                  <Image src="/images/art/soar.png" alt="wheein soar" layout='fill'/>
+                  <Image class="soar" src="/images/art/soar.png" alt="wheein soar" layout='fill'/>
                 </div>
                 <div className={styles.imgcontainer}>
-                  <Image src="/images/art/easy.png" alt="wheein soar" layout='fill'/>
+                  <Image class="easy" src="/images/art/easy.png" alt="wheein soar" layout='fill'/>
                 </div>
+              </div>
+            </div>
+              
+
+              <div className={styles.otherart}>
+                <figure class="otherartitem">
+                  <div className={styles.imgcontainer}>
+                    <Image  src="/images/art/magnolia.png" alt="wheein soar" layout='fill'/>
+                  </div>     
+                  <figcaption>her magnolia tattoo</figcaption>
+                </figure>
+
+                <figure class="otherartitem">
+                  <div className={styles.imgcontainer}>
+                    <Image  src="/images/art/twit.png" alt="wheein soar" layout='fill'/>
+                  </div>     
+                  <figcaption>featured in hwasa&#39;s twit photobook</figcaption>
+                </figure>
+
+                <figure class="otherartitem">
+                  <div className={styles.imgcontainer}>
+                    <Image  src="/images/art/scribble.png" alt="wheein soar" layout='fill'/>
+                  </div>     
+                  <figcaption>tattoo ideas anyone?</figcaption>
+                </figure>
+
+                <figure class="otherartitem">
+                  <div className={styles.imgcontainer}>
+                    <Image  src="/images/art/hwasa.png" alt="wheein soar" layout='fill'/>
+                  </div>     
+                  <figcaption>she looks like hwasa</figcaption>
+                </figure>
+
               </div>
             </div>
 

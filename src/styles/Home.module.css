@@ -124,22 +124,18 @@
 
 .art{
     text-align: center;
-    padding:10rem 5rem;
+    padding:10rem 4rem;
+}
+
+.artmain{
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-
-.artcontainer{
-display: flex;
-flex-direction: column;
-align-items: center;
-}
-
 .artredd{
 height:70rem;
-width: 80vw;
+width: 90vw;
 position: relative;
 margin: 5rem 0;
 }
@@ -153,15 +149,40 @@ margin: 5rem 0;
 .easysoar{
     display: grid;
     grid-template-columns: repeat(2,1fr);
-    gap:2rem;
+    gap: 2rem;
     margin: 5rem 0;
 }
 
 .easysoar .imgcontainer{
-    height:80rem;
+    height:70rem;
+    width: 44vw;
+    position: relative;
+}
+
+.otherart{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 25rem;
+}
+
+.otherart figure{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.otherart figure:nth-of-type(2n){
+    align-items: end;
+}
+
+.otherart .imgcontainer{
+    height:50rem;
     width: 40vw;
     position: relative;
 }
+
+
 
 .end{
     text-align: center;

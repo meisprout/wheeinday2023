@@ -714,12 +714,36 @@ export default function Home() {
             
             </section>
 
-          </article>
-          
-          <section className={styles.end}>
-              <h2>YOU&#39;VE REACHED THE END OF THE SITE!</h2>
-              <h2>The site is still work in progress. To further improve the site until completion, you may share feedback or suggestions to <Link href="https://twitter.com/loafsprout">@loafsprout!</Link></h2>
+            <section id="love" className={styles.love}>
+            <div className={styles.mainlove}>
+            <h2 class="heading">
+                <div>
+                    <span class="line">The Voice of Love</span>
+                </div>
+              </h2>
+
+              <p class="description">
+              Through Good bye, she is able to show a romantic &#40;yet, heartbreaking&#41; relationship between two women. For a conservative South Korean public, this is a big step for positive LGBTQ+ representation in Korean media.</p>
+            </div>
+              
+              
+              
+                <div className={styles.lovecontent}>
+                <p  class="description">
+                  “I just want to say that the shape of love is diverse and melt that into a painting. Whatever form it is, it&#39;s all the same love. Love also has various shapes, but, they&#39;re all the same.”
+                </p>
+                </div>
+
+              <figure class="lovepic">
+                  <div className={styles.imgcontainer}>
+                    <Image  src="/images/rainbow.png" alt="wheein soar" layout='fill'/>
+                  </div>     
+                  <figcaption>wheein with a pin from rainbow moomoos, a lgbtq+ organization of moomoos.</figcaption>
+                </figure>
+              
             </section>
+
+          </article>
       </main>
     </>
   )

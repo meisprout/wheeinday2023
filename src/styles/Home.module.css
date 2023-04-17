@@ -140,9 +140,13 @@ position: relative;
 margin: 5rem 0;
 }
 
-.artdescription{
+.artdescription, .lovecontent{
     font-family: "Instrument Serif", serif;
     font-weight:normal;
+}
+
+.artdescription{
+    
     font-size: 6rem;
 }
 
@@ -182,17 +186,38 @@ margin: 5rem 0;
     position: relative;
 }
 
-
-
-.end{
-    text-align: center;
+.love{
     margin-top: 8rem;
+    text-align: right;
+    padding:0 5rem;
 }
 
-.end a{
-    color: inherit;
-    font-family: inherit;
-    font-size: inherit;
+.mainlove p{
+    margin-bottom: 10rem;
+    margin-left:20rem;
+}
+
+.lovecontent{
+    font-size: 6rem;
+    margin: 4rem 0;
+    text-align: left;
+    border: 3px solid #292B31;
+    border-radius: 10rem;
+    padding: 5rem;
+}
+
+
+.love figure{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 4rem;
+}
+
+.love .imgcontainer{
+    height:70rem;
+    width: 44vw;
+    position: relative;
 }
 
 @media only screen and (max-width:600px) {

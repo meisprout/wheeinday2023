@@ -16,6 +16,8 @@ html{
 }
 
 body {
+  background-color: #F0F2F6;
+  color:#292B31;
   overflow-x: hidden;
   font-size: 2rem;
   font-family: "Archivo", sans-serif;
@@ -61,11 +63,6 @@ h1 span, h2 span, h3 span{
   display: inline-block;
   transform:translateY(100%);
   opacity: 0;
-}
-
-#main{
-  background-color: #F0F2F6;
-  color:#292B31;
 }
 
 img, iframe{

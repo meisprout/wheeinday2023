@@ -7,6 +7,7 @@ import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import { useLayoutEffect, useRef } from 'react'
 import SoloWork from '@component/components/solowork'
 import Komca from '@component/components/komca'
+import Award from '@component/components/award'
 import Link from 'next/link'
 
 export default function Home() {
@@ -150,6 +151,36 @@ export default function Home() {
           trigger:"#komcacontainer"
         }
       });
+
+      gsap.set("#morewheeinheading",{
+        backgroundImage:"radial-gradient(50% 50% at 50% 50%, #292B31 0%, #292B31 100%)",
+        color:"#F0F2F6",
+      });
+      gsap.to("#morewheeinheading", {
+        scrollTrigger: {
+          trigger: "#morewheeinheading",
+          start: "5%",
+          end: "center",
+          scrub: 0.25
+        },
+        backgroundImage:"radial-gradient(50% 50% at 50% 50%, #AAB9E1 0%, #F0F2F6 100%)",
+        color:"#292B31",
+      });
+
+      gsap.set("#morewheein",{
+          backgroundColor:"#292B31",
+          color:"#F0F2F6"
+        });
+        gsap.to("#morewheein", {
+          scrollTrigger: {
+            trigger: "#morewheeinheading",
+            start: "5%",
+            end: "center",
+            scrub: 0.25
+          },
+          backgroundColor:"#F0F2F6",
+          color:"#292B31",
+        });
 
     }, app);
     
@@ -497,12 +528,116 @@ export default function Home() {
               </div>
               
             </section>
-            <section className={styles.end}>
+
+            <section id="awards" className={styles.awards}>
+          <h2 class="heading">
+                <div>
+                    <span class="line">Her hardwork always pay off!</span>
+                </div>
+              </h2>
+
+              <p class="description">
+              MAMAMOO members are well-known for being self-made artists, and Wheein is no exception!              </p>
+              
+              <div id="awardscontainer" className={styles.awardscontainer}>
+              <Award  props={
+                  {
+                    event:"Inkigayo (2017)",
+                    award:"Music show win (Anymore w/ Jungkey)",
+                    status:"Winner"
+                  }
+                }/>
+                <Award  props={
+                  {
+                    event:"Gaon Chart Music Awards (2019)",
+                    award:"Artist of the Year – Digital Music (Good Bye)",
+                    status:"Nominee"
+                  }
+                }/>
+                <Award  props={
+                  {
+                    event:"APAN Star Awards (2020)",
+                    award:"Best OST Award (With My Tears)",
+                    status:"Nominee"
+                  }
+                }/>
+                <Award  props={
+                  {
+                    event:"Seoul Music Awards (2020)",
+                    award:"OST Award (With My Tears)",
+                    status:"Nominee"
+                  }
+                }/>
+                <Award  props={
+                  {
+                    event:"TOP TEN Awards (2022)",
+                    award:"Best Artist of K-Drama OST",
+                    status:"Winner"
+                  }
+                }/>
+                <Award  props={
+                  {
+                    event:"MCountdown (2022)",
+                    award:"Music show win (Make Me Happy)",
+                    status:"Winner"
+                  }
+                }/>
+              </div>
+              
+          </section>
+          </article>
+          
+          <article id="morewheein" className={styles.morewheein}>
+          <section id="morewheeinheading" className={styles.morewheeinheading}>
+          <h2 class="heading">
+              <div>
+                  <span class="line">Aside from being a honey-voiced </span>
+              </div>
+              <div>
+                  <span class="line">singer and a skillful dancer, </span>
+              </div>
+              <div>
+                  <span class="line">Wheein is also...</span>
+              </div>
+            </h2>
+          </section>
+            
+
+            <section id="art" className={styles.art}>
+            <h3 class="heading">
+              <div>
+                  <span class="line">A Creative Visual Artist</span>
+              </div>
+            </h3>
+
+            <div className={styles.artcontainer}>
+              <div className={styles.artredd}>
+                <Image src="/images/art/redd.png" alt="wheein redd" layout='fill'/>
+              </div>
+
+              <div className={styles.artdescription}>
+                <p>Incorporating paintings in her music releases</p>
+              </div>
+
+              <div className={styles.easysoar}>
+                <div className={styles.imgcontainer}>
+                  <Image src="/images/art/soar.png" alt="wheein soar" layout='fill'/>
+                </div>
+                <div className={styles.imgcontainer}>
+                  <Image src="/images/art/easy.png" alt="wheein soar" layout='fill'/>
+                </div>
+              </div>
+            </div>
+
+            
+            </section>
+
+          </article>
+          
+          <section className={styles.end}>
               <h2>YOU&#39;VE REACHED THE END OF THE SITE!</h2>
               <h2>The site is still work in progress. To further improve the site until completion, you may share feedback or suggestions to <Link href="https://twitter.com/loafsprout">@loafsprout!</Link></h2>
             </section>
-          </article>
-          
       </main>
     </>
   )

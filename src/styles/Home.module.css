@@ -13,7 +13,7 @@
     font-size: 5rem;
 }
 
-.hero{
+.hero, .morewheeinheading{
   display: flex;
   align-items: center;
   justify-content: center;
@@ -39,13 +39,6 @@
     height:70vh;
     overflow: hidden;
 }
-
-.aboutimgset .imgcontainer img{
-    width:100%;
-    height:100%;
-    object-fit: cover;
-}
-
 .aboutdesc{
     padding:0 15rem;
 }
@@ -108,9 +101,67 @@
     grid-template-columns: repeat(3,1fr);
     gap:2rem;
     padding:5rem;
-    margin-top: 0 5rem;
+    margin-top: 5rem;
 }
 
+.awards{
+    padding-top: 5rem;
+    text-align: center;
+}
+
+.awardscontainer{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 2rem;
+    
+    padding:5rem;
+    margin-top: 5rem;
+}
+
+.morewheeinheading{
+    padding:30rem 0;
+}
+
+.art{
+    text-align: center;
+    padding:10rem 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.artcontainer{
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+.artredd{
+height:70rem;
+width: 80vw;
+position: relative;
+margin: 5rem 0;
+}
+
+.artdescription{
+    font-family: "Instrument Serif", serif;
+    font-weight:normal;
+    font-size: 6rem;
+}
+
+.easysoar{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap:2rem;
+    margin: 5rem 0;
+}
+
+.easysoar .imgcontainer{
+    height:80rem;
+    width: 40vw;
+    position: relative;
+}
 
 .end{
     text-align: center;
